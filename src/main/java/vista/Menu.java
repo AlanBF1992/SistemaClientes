@@ -5,7 +5,7 @@ import modelo.Cliente;
 import servicio.ArchivoServicio;
 import servicio.ClienteServicio;
 import servicio.ExportadorCSV;
-import servicio.ExportadorTxt;
+import servicio.ExportadorTXT;
 import utilidades.Utilidad;
 
 import java.util.Scanner;
@@ -13,8 +13,8 @@ import java.util.Scanner;
 public class Menu {
     private ClienteServicio clienteServicio = ClienteServicio.getClienteServicio();
     private ArchivoServicio archivoServicio = new ArchivoServicio();
-    private ExportadorCSV exportadorCsv = new ExportadorCSV();
-    private ExportadorTxt exportadorTxt = new ExportadorTxt();
+    private final ExportadorCSV exportadorCsv = new ExportadorCSV();
+    private final ExportadorTXT exportadorTxt = new ExportadorTXT();
     private String fileName = "Clientes";
     private String fileName1 = "DbClientes.csv";
     private Scanner sc = new Scanner(System.in);
@@ -22,7 +22,7 @@ public class Menu {
     public void iniciarMenu(){
         String opcion = "";
 
-        while(opcion != "6") {
+        while(!opcion.equals("6")) {
             mainMenu();
             opcion = sc.nextLine();
             switch (opcion) {
@@ -41,10 +41,8 @@ public class Menu {
                 case "5":
                     menuExportarDatos();
                     break;
-
             }
         }
-
     }
 
     public void mainMenu() {

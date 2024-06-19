@@ -7,7 +7,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.util.List;
 
-public class ExportadorCSV extends Exportador {
+public class ExportadorTXT extends Exportador{
 
     @Override
     public void exportar(String fileName, List<Cliente> listaClientes) {
